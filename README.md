@@ -4,7 +4,7 @@ This repository is to demonstrate a potential bug in the .NET Core 3.1 SDK that 
 
 ## Background
 
-The AWS .NET Lambda tooling explicitly sets the **GenerateRuntimeConfigurationFiles** to true flag when doing a `dotnet publish`. This was necessary because in Lambda we send the entry point is a netcoreapp2.1 Library but we need to make sure the runtime.config is generated with the deployment bundle even though it is library so on Lambda's side we have the correct start up parameters. In older versions of the .NET SDK it would not generate the runtime.config file if the project doing `dotnet publish` on was a library which is why we explicitly set the GenerateRuntimeConfigurationFiles to true.
+The AWS .NET Lambda tooling explicitly sets the **GenerateRuntimeConfigurationFiles** to true flag when doing a `dotnet publish`. This was necessary because in Lambda the entry point is a netcoreapp2.1 Library but we need to make sure the runtime.config is generated with the deployment bundle even though it is library so on Lambda's side we have the correct start up parameters. In older versions of the .NET SDK it would not generate the runtime.config file if the project doing `dotnet publish` on was a library which is why we explicitly set the GenerateRuntimeConfigurationFiles to true.
 
 ## The breaking issue
 
